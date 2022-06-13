@@ -44,6 +44,7 @@ fn main() -> std::io::Result<()> {
         thread::spawn(move || serve(stream.unwrap(), tx));
     }
 
+    CLIENTS.lock().unwrap().clear();
     Ok(())
 }
 
